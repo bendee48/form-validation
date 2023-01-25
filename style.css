@@ -1,0 +1,129 @@
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul {
+  margin: 0;
+}
+
+/* Remove Default Padding */
+
+ul {
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+font: inherit;
+}
+
+/* Icons */
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 200,
+    'opsz' 48
+}
+
+/* Main Styling */
+
+body {
+  background: rgb(236, 236, 236);
+  font-family: Calibri, 'Courier New', Courier, monospace;
+}
+
+
+/* Form */
+
+label {
+  width: 150px;
+  display: inline-block;
+  text-align: right;
+}
+
+.form-input {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.errors {
+  color: red;
+  font-size: 0.8rem;
+  position: absolute;
+  margin-top: 2px;
+  left: 160px;
+}
+
+.form-submit {
+  margin-left: 1rem;
+}
+
+.valid {
+  box-shadow: 0 0 2px 2px rgba(26, 201, 41, 0.8);
+  border: none;
+  outline: none;
+}
+
+.invalid {
+  box-shadow: 0 0 2px 2px rgba(255, 42, 42, 0.8);
+  border: none;
+  outline: none;
+}
+
