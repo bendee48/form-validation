@@ -4,9 +4,12 @@ const country = document.querySelector('input[name="country"]');
 const countryErrors = document.querySelector('.errors-country');
 const postcode = document.querySelector('input[name="postcode"]');
 const postcodeErrors = document.querySelector('.errors-postcode');
+const password = document.querySelector('input[name="password"]');
+const passwordErrors = document.querySelector('.errors-password');
 email.addEventListener('focusout', validateEmail);
 country.addEventListener('focusout', validateCountry);
 postcode.addEventListener('focusout', validatePostcode);
+password.addEventListener('focusout', validatePassword);
 
 // Return false if any validation check fails, otherwise true fo each validate function
 function validateEmail() {
@@ -73,6 +76,33 @@ function validatePostcode() {
 
   postcode.className = 'valid';
   postcodeErrors.textContent = '';
+  return true;
+}
+
+function validatePassword() {
+  let errorText = '';
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+  if (!inputIsPresent(password, errorText, passwordErrors)) {
+    return false;
+  }
+
+  if (password.value.length < 8) {
+    errorText += 'Password should be at least 8 characters long';
+    password.className = 'invalid';
+    passwordErrors.textContent = errorText;
+    return false;
+  }
+
+  if (!passwordRegex.test(password.value)) {
+    errorText += 'Password should contain letters and numbers';
+    password.className = 'invalid';
+    passwordErrors.textContent = errorText;
+    return false;
+  }
+
+  password.className = 'valid';
+  passwordErrors.textContent = '';
   return true;
 }
 
