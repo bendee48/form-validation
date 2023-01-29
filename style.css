@@ -96,6 +96,7 @@ label {
   width: 150px;
   display: inline-block;
   text-align: right;
+  margin-right: 1rem;
 }
 
 .form-input {
@@ -125,5 +126,14 @@ label {
   box-shadow: 0 0 2px 2px rgba(255, 42, 42, 0.8);
   border: none;
   outline: none;
+}
+
+/* Sumit Message */
+
+.submit-msg {
+  width: 150px;
+  text-align: right;
+  font-size: 1.5rem;
+  color: green;
 }
 

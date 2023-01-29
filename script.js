@@ -1,3 +1,4 @@
+const form = document.querySelector('form');
 const email = document.querySelector('input[name="email"]');
 const emailErrors = document.querySelector('.errors-email');
 const country = document.querySelector('input[name="country"]');
@@ -6,10 +7,24 @@ const postcode = document.querySelector('input[name="postcode"]');
 const postcodeErrors = document.querySelector('.errors-postcode');
 const password = document.querySelector('input[name="password"]');
 const passwordErrors = document.querySelector('.errors-password');
+const submitMsgContainer = document.querySelector('.submit-msg');
 email.addEventListener('focusout', validateEmail);
 country.addEventListener('focusout', validateCountry);
 postcode.addEventListener('focusout', validatePostcode);
 password.addEventListener('focusout', validatePassword);
+form.addEventListener('submit', validateForm);
+
+// Run all validations on Sumbit
+function validateForm(e) {
+  e.preventDefault();
+  if (validateEmail() &&
+      validateCountry() &&
+      validatePostcode() &&
+      validatePassword()) {
+    submitMsgContainer.textContent = "Yes, amazing. Everything is valid and the form has been submitted.";
+  }
+}
+
 
 // Return false if any validation check fails, otherwise true fo each validate function
 function validateEmail() {
@@ -105,6 +120,8 @@ function validatePassword() {
   passwordErrors.textContent = '';
   return true;
 }
+
+// Helpers
 
 function inputIsPresent(inputElement, errorText, errorContainer) {
   if (!inputElement.value) {
