@@ -36,7 +36,8 @@ function validateEmail() {
   }
 
   if (!emailRegex.test(email.value)) {
-    errorText += 'Not a valid email address';
+    errorText += `'${email.value}' is not a valid email address.
+                   Example of a valid email: yourname@example.com`;
     email.className = 'invalid';
     emailErrors.textContent = errorText;
     return false;
@@ -83,7 +84,7 @@ function validatePostcode() {
   }
 
   if (!postcodeRegex.test(postcode.value)) {
-    errorText += 'Not a valid UK postcode';
+    errorText += 'Not a valid UK postcode. Example of a valid UK postcode: SW1A 1AA';
     postcode.className = 'invalid';
     postcodeErrors.textContent = errorText;
     return false;

@@ -101,7 +101,7 @@ label {
 
 .form-input {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .errors {
@@ -109,7 +109,7 @@ label {
   font-size: 0.8rem;
   position: absolute;
   margin-top: 2px;
-  left: 160px;
+  left: 175px;
 }
 
 .form-submit {
